@@ -899,7 +899,7 @@ export default function QuotationsPage() {
                 <div className="w-full md:w-1/2 pr-8 space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Customer Notes</label>
-                    <textarea value={form.notes} onChange={handleChange} name="notes" rows={4} className="w-full border border-gray-300 rounded-md p-3 text-sm outline-none focus:border-blue-500 text-gray-700 shadow-sm" placeholder="We thank you for your enquiry and look forward for your confirmation of order."></textarea>
+                    <textarea value={form.notes} onChange={handleChange} name="notes" rows={4} className="w-full border border-gray-300 rounded-md p-3 text-sm outline-none focus:border-blue-500 text-gray-700 shadow-sm" placeholder="We thank you for your enquiry and look forward for your confirmation of order.">We thank you for your enquiry and look forward for your confirmation of order.</textarea>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Terms & Conditions</label>

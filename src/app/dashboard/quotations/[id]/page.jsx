@@ -220,7 +220,7 @@ export default async function QuoteDetailsPage({ params }) {
           {(displaySubject || quote.subject_content || localQuote?.subject || localQuote?.rawZohoData?.subject_content || localQuote?.rawZohoData?.subject) && (
             <div className="mt-8 text-sm text-gray-800">
               <p className="mb-2">Subject :</p>
-              <p className="uppercase">{displaySubject || quote.subject_content || localQuote?.subject || localQuote?.rawZohoData?.subject_content || localQuote?.rawZohoData?.subject}</p>
+              <p className="uppercase">{displaySubject || quote.subject_content || localQuote?.subject || localQuote?.rawZohoData?.subject_content || localQuote?.rawZohoData?.subject} </p>
             </div>
           )}
         </div>

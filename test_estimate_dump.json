@@ -1,30 +1,30 @@
 {
-  "estimate_id": "5941994000004960002",
-  "estimate_number": "ZIQ26270115",
+  "estimate_id": "5941994000005088002",
+  "estimate_number": "ZIQ26270120",
   "zcrm_potential_id": "",
   "zcrm_potential_name": "",
-  "date": "2026-06-26",
-  "created_date": "2026-06-26",
+  "date": "2026-07-03",
+  "created_date": "2026-07-03",
   "is_pre_gst": false,
   "invoice_conversion_type": "invoice",
-  "reference_number": "",
-  "status": "accepted",
+  "reference_number": "RFQ#ZT-1138",
+  "status": "approved",
   "color_code": "",
   "current_sub_status_id": "",
-  "current_sub_status": "accepted",
+  "current_sub_status": "approved",
   "sub_statuses": [],
-  "customer_id": "5941994000001399137",
+  "customer_id": "5941994000000214015",
   "documents": [],
-  "customer_name": "TruFlow Solutions Private Limited",
+  "customer_name": "MEC Valves",
   "place_of_supply": "TN",
   "is_transaction_created": false,
   "is_converted_to_open": false,
   "is_progressive_quote": false,
-  "uninvoiced_amount": 14160,
+  "uninvoiced_amount": 2832,
   "invoiced_amount": 0,
   "tax_specification": "intra",
   "is_taxable": true,
-  "gst_no": "33AAJCR6720N1Z1",
+  "gst_no": "33AAGPK8967N1ZZ",
   "contact_category": "business_gst",
   "gst_treatment": "business_gst",
   "tax_treatment": "business_gst",
@@ -34,7 +34,7 @@
   "currency_code": "INR",
   "currency_symbol": "₹",
   "exchange_rate": 1,
-  "expiry_date": "",
+  "expiry_date": "2026-10-03",
   "discount_amount": 0,
   "discount": 0,
   "discount_applied_on_amount": 0,
@@ -45,7 +45,7 @@
   "is_inclusive_tax": false,
   "tax_rounding": "entity_level",
   "tds_calculation_type": "tds_item_level",
-  "estimate_url": "https://zohosecurepay.com/books/zeetorkautomationampcontrolpri/secure?CEstimateID=2-9818018b7daa5523ab67b4b6a34a50cd9af6c3ea2057fb53e9ab6359dc917d106d25365629acdf24f33a940c5eb98c2713a611d52c75290123418f049ab956cd773145eff044b5ed ",
+  "estimate_url": "https://zohosecurepay.com/books/zeetorkautomationampcontrolpri/secure?CEstimateID=2-9818018b7daa5523883abd9bb45bb0f79af6c3ea2057fb532482694c266f22bbb7d342428ec2d64ff33a940c5eb98c2713a611d52c7529019e9500c6021a523611e80a707f5b3196 ",
   "is_reverse_charge_applied": false,
   "lock_details": {
     "can_lock": false
@@ -62,19 +62,19 @@
   "journey_plan_id": "",
   "line_items": [
     {
-      "item_id": "5941994000000158064",
-      "line_item_id": "5941994000004960006",
+      "item_id": "5941994000000207068",
+      "line_item_id": "5941994000005088006",
       "sku": "",
       "documents": [],
-      "name": "ZRC14SA",
+      "name": "ZLS210M2",
       "internal_name": "",
-      "description": "Actuator Type : Single Acting Pneumatic\nActuator Model : ZRC14SA\nSpring Qty:12\nAir Connection :1/4\" BSP\nISO Flange dimensions: F07/F10\nDrive Double square: 22mm (F)\nBody: Extruded Aluminium Black hard anodised\nEnd Cap : Cast Aluminium (RAL3020)\nSupply Pressure : 5 Bar",
+      "description": "Item: Limit Switch\nModel No: ZLS210M2\nDie-cast Aluminum with polyester powder coated, O-ring sealed\n2SPDT Mechanical SwitchesSS5GL (Honey well switches);250V AC/3A,\n125V AC/5A 250VDC/0.2A, 125VDC/0.4A, 30VDC/4A\nCable Entry: 2* 1/2\" NPT\nWeather proof:IP67",
       "item_order": 1,
       "header_id": "",
       "header_name": "",
       "bcy_rate": 1200,
       "rate": 1200,
-      "quantity": 10,
+      "quantity": 2,
       "unit": "pcs",
       "pricing_scheme": "unit",
       "pricebook_id": "",
@@ -97,17 +97,17 @@
         {
           "tax_id": "5941994000000100101",
           "tax_name": "CGST9 (9%)",
-          "tax_amount": 1080
+          "tax_amount": 216
         },
         {
           "tax_id": "5941994000000100103",
           "tax_name": "SGST9 (9%)",
-          "tax_amount": 1080
+          "tax_amount": 216
         }
       ],
       "line_item_tds": [],
       "gst_treatment_code": "",
-      "item_total": 12000,
+      "item_total": 2400,
       "product_type": "goods",
       "package_details": {
         "length": "",
@@ -121,7 +121,7 @@
       "combo_type": "",
       "item_code": {},
       "is_tax_calculation_on_label_price": false,
-      "hsn_or_sac": "84123900",
+      "hsn_or_sac": "85365090",
       "reverse_charge_tax_id": "",
       "tds_tax_id": "",
       "tds_tax_name": "",
@@ -134,12 +134,12 @@
     }
   ],
   "submitter_id": "5941994000002590005",
-  "submitted_date": "2026-06-26",
+  "submitted_date": "2026-07-03",
   "submitted_by": "Priyadharshini (Finance) (finance@truflow.in)",
   "submitted_by_name": "Priyadharshini (Finance)",
   "submitted_by_email": "finance@truflow.in",
   "submitted_by_photo_url": "https://contacts.zoho.com/file?t=user&ID=910406181&fs=thumb",
-  "approver_id": "5941994000002590005",
+  "approver_id": "5941994000000128281",
   "shipping_charge_tax_id": "",
   "shipping_charge_tax_name": "",
   "shipping_charge_tax_type": "",
@@ -166,29 +166,29 @@
   "transaction_rounding_type": "no_rounding",
   "rounding_mode": "round_half_up",
   "bcy_rounding_mode": "round_half_up",
-  "sub_total": 12000,
-  "bcy_sub_total": 12000,
+  "sub_total": 2400,
+  "bcy_sub_total": 2400,
   "sub_total_inclusive_of_tax": 0,
-  "sub_total_exclusive_of_discount": 12000,
+  "sub_total_exclusive_of_discount": 2400,
   "discount_total": 0,
   "bcy_discount_total": 0,
   "discount_percent": 0,
-  "total": 14160,
-  "bcy_total": 14160,
-  "tax_total": 2160,
-  "bcy_tax_total": 2160,
+  "total": 2832,
+  "bcy_total": 2832,
+  "tax_total": 432,
+  "bcy_tax_total": 432,
   "reverse_charge_tax_total": 0,
   "price_precision": 2,
   "taxes": [
     {
-      "tax_amount": 1080,
+      "tax_amount": 216,
       "tax_name": "CGST9",
-      "tax_amount_formatted": "₹1,080.00"
+      "tax_amount_formatted": "₹216.00"
     },
     {
-      "tax_amount": 1080,
+      "tax_amount": 216,
       "tax_name": "SGST9",
-      "tax_amount_formatted": "₹1,080.00"
+      "tax_amount_formatted": "₹216.00"
     }
   ],
   "tds_override_preference": "no_override",
@@ -196,23 +196,23 @@
   "invoice_ids": [],
   "subscription_ids": [],
   "billing_address": {
-    "address": "617/ 2H2, Vadakku Thottam, \n Malumichampatti,\n Madukkarai, \n Coimbatore\n Tamil Nadu - 641050",
+    "address": "145/3, Madam St, Nethaji Nagar,Kangeyanallore Village, \nVellore-632006\nMob: +919443542457",
     "street2": "",
     "city": "",
     "state": "",
     "zip": "",
-    "country": "",
+    "country": "India",
     "fax": "",
     "phone": "",
     "attention": ""
   },
   "shipping_address": {
-    "address": "617/ 2H2, Vadakku Thottam, \n Malumichampatti,\n Madukkarai, \n Coimbatore\n Tamil Nadu - 641050",
+    "address": "145/3, Madam St, Nethaji Nagar,Kangeyanallore Village, \nVellore-632006\nMob: +919443542457",
     "street2": "",
     "city": "",
     "state": "",
     "zip": "",
-    "country": "",
+    "country": "India",
     "fax": "",
     "phone": "",
     "attention": ""
@@ -220,8 +220,8 @@
   "dispatch_from_address": {},
   "customer_default_billing_address": {
     "zip": "",
-    "country": "",
-    "address": "617/ 2H2, Vadakku Thottam, \n Malumichampatti,\n Madukkarai, \n Coimbatore\n Tamil Nadu - 641050",
+    "country": "India",
+    "address": "145/3, Madam St, Nethaji Nagar,Kangeyanallore Village, \nVellore-632006\nMob: +919443542457",
     "city": "",
     "phone": "",
     "city_code": "",
@@ -231,7 +231,7 @@
     "state_code": ""
   },
   "notes": "",
-  "terms": "",
+  "terms": "Price: Quoted net in INR, Ex-works Factory Coimbatore\nTax:18%\nDelivery: Within 1 Weeks from the date of PO\nPayment: 100% Against Proforma Invoice",
   "custom_fields": [
     {
       "field_id": "5941994000000090644",
@@ -254,11 +254,57 @@
       "placeholder": "cf_offer_status",
       "value": "Open",
       "is_dependent_field": false
+    },
+    {
+      "field_id": "5941994000003430001",
+      "customfield_id": "5941994000003430001",
+      "show_in_store": false,
+      "show_in_portal": false,
+      "is_active": true,
+      "index": 2,
+      "label": "Estimated Margin",
+      "show_on_pdf": false,
+      "edit_on_portal": false,
+      "edit_on_store": false,
+      "api_name": "cf_estimated_margin",
+      "show_in_all_pdf": false,
+      "value_formatted": "15.00",
+      "search_entity": "estimate",
+      "data_type": "decimal",
+      "placeholder": "cf_estimated_margin",
+      "value": 15,
+      "is_dependent_field": false
+    },
+    {
+      "field_id": "5941994000003977043",
+      "customfield_id": "5941994000003977043",
+      "show_in_store": false,
+      "show_in_portal": false,
+      "is_active": true,
+      "index": 3,
+      "label": "Market Segment",
+      "show_on_pdf": false,
+      "edit_on_portal": false,
+      "edit_on_store": false,
+      "is_color_code_supported": false,
+      "api_name": "cf_market_segment",
+      "show_in_all_pdf": false,
+      "selected_option_id": "5941994000003977050",
+      "value_formatted": "General Industry",
+      "search_entity": "estimate",
+      "data_type": "dropdown",
+      "placeholder": "cf_market_segment",
+      "value": "General Industry",
+      "is_dependent_field": false
     }
   ],
   "custom_field_hash": {
     "cf_offer_status": "Open",
-    "cf_offer_status_unformatted": "Open"
+    "cf_offer_status_unformatted": "Open",
+    "cf_estimated_margin": "15.00",
+    "cf_estimated_margin_unformatted": 15,
+    "cf_market_segment": "General Industry",
+    "cf_market_segment_unformatted": "General Industry"
   },
   "template_id": "5941994000000090582",
   "template_name": "Truflow Final",
@@ -266,21 +312,21 @@
   "page_width": "8.27in",
   "page_height": "11.69in",
   "orientation": "portrait",
-  "created_time": "2026-06-26T16:34:19+0530",
-  "last_modified_time": "2026-06-26T16:35:28+0530",
+  "created_time": "2026-07-03T11:37:39+0530",
+  "last_modified_time": "2026-07-03T14:11:35+0530",
   "created_by_id": "5941994000002590005",
-  "last_modified_by_id": "5941994000002590005",
+  "last_modified_by_id": "5941994000000128281",
   "contact_persons_associated": [],
   "contact_persons_details": [
     {
-      "contact_person_id": "5941994000001399139",
-      "first_name": "Senthamil Selvan",
+      "contact_person_id": "5941994000000706132",
+      "first_name": "SRIRAM",
       "last_name": "",
-      "email": "sales6@truflow.in",
+      "email": "mecvalves@gmail.com",
       "phone": "",
-      "mobile": "",
+      "mobile": "9443542457",
       "is_primary_contact": true,
-      "photo_url": "https://secure.gravatar.com/avatar/ee7b232508e2b8f41545bccf7c511bf0?&d=mm"
+      "photo_url": "https://secure.gravatar.com/avatar/278514bc00e03aabacfc06a15807bbdd?&d=mm"
     }
   ],
   "salesperson_id": "5941994000000104035",
@@ -301,22 +347,22 @@
   "approvers_list": [
     {
       "order": 1,
-      "approver_user_id": "5941994000002590005",
-      "approver_name": "Priyadharshini (Finance)",
-      "email": "finance@truflow.in",
+      "approver_user_id": "5941994000000128281",
+      "approver_name": "Sabarishan",
+      "email": "sales4@zeetork.com",
       "has_approved": true,
       "approval_status": "approved",
       "is_next_approver": false,
       "submitted_date": "",
-      "approved_date": "2026-06-26",
-      "photo_url": "https://contacts.zoho.com/file?t=user&ID=910406181&fs=thumb",
+      "approved_date": "2026-07-03",
+      "photo_url": "https://contacts.zoho.com/file?t=user&ID=871607749&fs=thumb",
       "user_status": "active",
       "is_final_approver": false,
       "available_apps": [
         "Zoho Payroll",
         "Zoho Books"
       ],
-      "zuid": "910406181"
+      "zuid": "871607749"
     }
   ]
 }
