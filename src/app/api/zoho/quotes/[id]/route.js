@@ -10,7 +10,6 @@ export async function GET(req, context) {
     const { id } = await context.params;
     
     const estimate = await getQuotationById(id);
-    require('fs').writeFileSync('/home/asus/Desktop/quotation/test_estimate_dump.json', JSON.stringify(estimate, null, 2));
     return NextResponse.json(estimate);
   } catch (error) {
     if (error.message?.includes("Forbidden") || error.message?.includes("Unauthorized")) {
