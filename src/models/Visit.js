@@ -14,9 +14,22 @@ const VisitSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['Completed', 'Pending', 'Cancelled'],
+    enum: ['Draft', 'Pending Approval', 'Approved', 'Rejected', 'Completed', 'Pending', 'Cancelled'],
+    default: 'Draft',
     required: true
   },
+  approvalStatus: {
+    type: String,
+    enum: ['Draft', 'Pending Approval', 'Approved', 'Rejected'],
+    default: 'Draft'
+  },
+  submittedAt: { type: Date },
+  submittedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  approvedAt: { type: Date },
+  approvedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  rejectedAt: { type: Date },
+  rejectedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  rejectionReason: { type: String },
   reportDetails: { type: String },
   location: {
     address: { type: String },

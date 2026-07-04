@@ -69,10 +69,47 @@ export default function VisitsPage() {
 
   const getStatusColor = (status) => {
     switch(status) {
-      case 'Completed': return 'bg-green-100 text-green-700';
+      case 'Completed': return 'bg-emerald-100 text-emerald-700';
+      case 'Approved': return 'bg-green-100 text-green-700';
+      case 'Pending Approval': return 'bg-yellow-100 text-yellow-700';
+      case 'Draft': return 'bg-gray-100 text-gray-700';
+      case 'Rejected': return 'bg-red-100 text-red-700';
       case 'Pending': return 'bg-yellow-100 text-yellow-700';
       case 'Cancelled': return 'bg-red-100 text-red-700';
       default: return 'bg-gray-100 text-gray-700';
+    }
+  };
+
+  const handleAction = async (id, action) => {
+    let confirmMsg = '';
+    if (action === 'submit') confirmMsg = 'Submit Visit for Approval?\n\nOnce submitted, this visit will be sent for approval and can no longer be edited until reviewed.';
+    if (action === 'approve') confirmMsg = 'Are you sure you want to approve this visit?';
+    if (action === 'reject') confirmMsg = 'Are you sure you want to reject this visit?';
+    if (action === 'complete') confirmMsg = 'Mark this visit as completed?';
+
+    if (confirmMsg && !window.confirm(confirmMsg)) return;
+
+    let reason = '';
+    if (action === 'reject') {
+        reason = window.prompt("Please provide a reason for rejection:");
+        if (reason === null) return;
+    }
+
+    try {
+      const res = await fetch(`/api/visits/${id}/action`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action, reason, userId: session?.user?.id })
+      });
+      if (res.ok) {
+        fetchVisits();
+      } else {
+        const errorData = await res.json();
+        alert(`Failed: ${errorData.error || "Unknown error"}`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert(`Error performing action`);
     }
   };
 
@@ -145,8 +182,11 @@ export default function VisitsPage() {
             onChange={(e) => setFilterStatus(e.target.value)}
           >
             <option value="">All Statuses</option>
+            <option value="Draft">Draft</option>
+            <option value="Pending Approval">Pending Approval</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
             <option value="Completed">Completed</option>
-            <option value="Pending">Pending</option>
             <option value="Cancelled">Cancelled</option>
           </select>
         </div>
@@ -250,12 +290,12 @@ export default function VisitsPage() {
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          {canEdit && (
+                          {canEdit && (visit.status === 'Draft' || visit.status === 'Rejected') && (
                             <Link href={`/dashboard/visits/${visit._id}/edit`} className="p-1.5 text-gray-400 hover:text-green-600 rounded-md hover:bg-green-50" onClick={(e) => e.stopPropagation()}>
                               <Edit size={16} />
                             </Link>
                           )}
-                          {canDelete && (
+                          {canDelete && visit.status === 'Draft' && (
                             <button onClick={(e) => { e.stopPropagation(); handleDelete(visit._id); }} className="p-1.5 text-gray-400 hover:text-red-600 rounded-md hover:bg-red-50">
                               <Trash2 size={16} />
                             </button>
@@ -267,6 +307,39 @@ export default function VisitsPage() {
                       <tr>
                         <td colSpan="7" className="px-0 py-0 border-b-2 border-blue-100">
                           <div className="bg-blue-50/40 px-8 py-6 shadow-inner text-sm text-gray-800">
+                            
+                            <div className="flex flex-wrap items-center justify-between mb-6 pb-4 border-b border-blue-100 gap-4">
+                              <div className="flex items-center gap-3">
+                                <h3 className="text-lg font-bold text-blue-900">Visit Details</h3>
+                                <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${getStatusColor(visit.status)}`}>
+                                  {visit.status === 'Pending Approval' && <span className="mr-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse"></span>}
+                                  {visit.status}
+                                </span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                {(visit.status === 'Draft' || visit.status === 'Rejected') && canEdit && (
+                                  <button onClick={() => handleAction(visit._id, 'submit')} className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                                    Submit for Approval
+                                  </button>
+                                )}
+                                {visit.status === 'Pending Approval' && isAdmin && (
+                                  <>
+                                    <button onClick={() => handleAction(visit._id, 'approve')} className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors shadow-sm">
+                                      Approve
+                                    </button>
+                                    <button onClick={() => handleAction(visit._id, 'reject')} className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition-colors shadow-sm">
+                                      Reject
+                                    </button>
+                                  </>
+                                )}
+                                {visit.status === 'Approved' && canEdit && (
+                                  <button onClick={() => handleAction(visit._id, 'complete')} className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 transition-colors shadow-sm">
+                                    Mark as Completed
+                                  </button>
+                                )}
+                              </div>
+                            </div>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                               <div>
                                 <h4 className="font-semibold text-blue-900 mb-3 uppercase tracking-wider text-xs">Full Visit Details</h4>

@@ -45,7 +45,14 @@ export async function POST(req) {
     }
 
     const customFieldsMapping = {
-      cf_quotation_creater: "cf_quotation_creater"
+      cf_quotation_creater: "cf_quotation_creater",
+      project_name: "cf_project_name",
+      offer_status: "cf_offer_status",
+      estimated_margin: "cf_estimated_margin",
+      epc_customer: "cf_epc_customer",
+      project: "cf_project",
+      end_user: "cf_end_user",
+      market_segment: "cf_market_segment"
     };
 
     for (const [bodyKey, apiName] of Object.entries(customFieldsMapping)) {

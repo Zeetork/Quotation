@@ -25,10 +25,17 @@ export async function PUT(request, { params }) {
     await dbConnect();
     const data = await request.json();
     
-    const visit = await Visit.findByIdAndUpdate(id, data, { new: true, runValidators: true });
-    if (!visit) {
+    // Check current status before allowing edit
+    const existingVisit = await Visit.findById(id);
+    if (!existingVisit) {
       return NextResponse.json({ error: 'Visit not found' }, { status: 404 });
     }
+    
+    if (existingVisit.status !== 'Draft' && existingVisit.status !== 'Rejected' && existingVisit.status !== 'Cancelled') {
+       return NextResponse.json({ error: 'Cannot edit a visit that is pending approval or already approved.' }, { status: 400 });
+    }
+    
+    const visit = await Visit.findByIdAndUpdate(id, data, { new: true, runValidators: true });
     
     return NextResponse.json(visit);
   } catch (error) {

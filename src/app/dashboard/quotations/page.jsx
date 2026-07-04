@@ -442,13 +442,13 @@ export default function QuotationsPage() {
           })) || [{ item_id: "", name: "", description: "", quantity: 1, rate: 0, tax_id: "" }],
           cf_quotation_creater: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_quotation_creater")?.value || "",
           salesperson: fullQuote.salesperson_name || fullQuote.salesperson_id || "",
-          project_name: fullQuote.project_id || fullQuote.custom_fields?.find(cf => cf.api_name === "project_name")?.value || "",
-          offer_status: fullQuote.custom_fields?.find(cf => cf.api_name === "offer_status")?.value || "Open",
-          estimated_margin: fullQuote.custom_fields?.find(cf => cf.api_name === "estimated_margin")?.value || "",
-          epc_customer: fullQuote.custom_fields?.find(cf => cf.api_name === "epc_customer")?.value || "",
-          project: fullQuote.custom_fields?.find(cf => cf.api_name === "project")?.value || "",
-          end_user: fullQuote.custom_fields?.find(cf => cf.api_name === "end_user")?.value || "",
-          market_segment: fullQuote.custom_fields?.find(cf => cf.api_name === "market_segment")?.value || "",
+          project_name: fullQuote.project_id || fullQuote.custom_fields?.find(cf => cf.api_name === "cf_project_name" || cf.api_name === "project_name")?.value || "",
+          offer_status: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_offer_status" || cf.api_name === "offer_status")?.value || "Open",
+          estimated_margin: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_estimated_margin" || cf.api_name === "estimated_margin")?.value || "",
+          epc_customer: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_epc_customer" || cf.api_name === "epc_customer")?.value || "",
+          project: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_project" || cf.api_name === "project")?.value || "",
+          end_user: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_end_user" || cf.api_name === "end_user")?.value || "",
+          market_segment: fullQuote.custom_fields?.find(cf => cf.api_name === "cf_market_segment" || cf.api_name === "market_segment")?.value || "",
         });
       }
     } catch (error) { console.error(error); }
