@@ -47,6 +47,7 @@ export async function PUT(req, context) {
       date: body.date,
       expiry_date: body.expiry_date,
       subject: body.subject,
+      subject_content: body.subject,
       notes: body.notes,
       terms: body.terms,
       discount: `${Number(body.discount_percent) || 0}%`,

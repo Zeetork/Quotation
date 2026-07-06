@@ -233,7 +233,7 @@ export default function QuotationsPage() {
     subject: "",
     date: new Date().toISOString().split("T")[0],
     expiry_date: "",
-    notes: "",
+    notes: "We thank you for your enquiry and look forward for your confirmation of order.",
     terms: "",
     discount_percent: 0,
     adjustment: 0,
@@ -427,7 +427,7 @@ export default function QuotationsPage() {
           subject: fullQuote.subject || fullQuote.subject_content || "",
           date: fullQuote.date || new Date().toISOString().split("T")[0],
           expiry_date: fullQuote.expiry_date || "",
-          notes: fullQuote.notes || "",
+          notes: fullQuote.notes || "We thank you for your enquiry and look forward for your confirmation of order.",
           terms: fullQuote.terms || "",
           discount_percent: fullQuote.discount || 0,
           adjustment: fullQuote.adjustment || 0,
@@ -899,7 +899,7 @@ export default function QuotationsPage() {
                 <div className="w-full md:w-1/2 pr-8 space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Customer Notes</label>
-                    <textarea value={form.notes} onChange={handleChange} name="notes" rows={4} className="w-full border border-gray-300 rounded-md p-3 text-sm outline-none focus:border-blue-500 text-gray-700 shadow-sm" placeholder="We thank you for your enquiry and look forward for your confirmation of order.">We thank you for your enquiry and look forward for your confirmation of order.</textarea>
+                    <textarea value={form.notes} onChange={handleChange} name="notes" rows={4} className="w-full border border-gray-300 rounded-md p-3 text-sm outline-none focus:border-blue-500 text-gray-700 shadow-sm" placeholder="We thank you for your enquiry and look forward for your confirmation of order."></textarea>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Terms & Conditions</label>

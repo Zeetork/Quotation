@@ -18,8 +18,8 @@ export async function syncCustomers(syncType = 'manual') {
     if (syncType === 'incremental') {
       const lastSync = await Customer.findOne().sort({ last_modified_time: -1 }).lean();
       if (lastSync && (lastSync.last_modified_time || lastSync.rawZohoData?.last_modified_time)) {
-        const modTime = lastSync.last_modified_time || lastSync.rawZohoData.last_modified_time;
-        params.last_modified_time = new Date(modTime).toISOString().split('.')[0] + 'Z';
+        const modTime = lastSync.rawZohoData?.last_modified_time || lastSync.last_modified_time;
+        params.last_modified_time = typeof modTime === "string" ? modTime : new Date(modTime).toISOString().split('.')[0] + '+0000';
       }
     }
 
