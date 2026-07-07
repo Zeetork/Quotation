@@ -102,6 +102,16 @@ export async function submitQuotationForApproval(id) {
 }
 
 /**
+ * Approve a quotation
+ */
+export async function approveQuotation(id) {
+  const data = await zohoFetch(`/estimates/${id}/approve`, {
+    method: "POST",
+  });
+  return data;
+}
+
+/**
  * Email a quotation
  */
 export async function sendQuotationEmail(id, emailParams) {

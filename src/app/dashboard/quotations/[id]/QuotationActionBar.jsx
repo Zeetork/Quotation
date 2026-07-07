@@ -24,6 +24,7 @@ export default function QuotationActionBar({ quote }) {
   const status = quote.status?.toLowerCase();
   
   const isDraft = status === "draft";
+  const isPendingApproval = status === "pending approval" || status === "pending_approval";
   const isSent = status === "sent";
   const isAccepted = status === "accepted" || status === "approved";
   const isDeclined = status === "declined";
@@ -89,13 +90,14 @@ export default function QuotationActionBar({ quote }) {
           <span className="text-sm font-semibold text-gray-500">Status:</span>
           <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider
             ${status === 'draft' ? 'bg-gray-200 text-gray-700' : ''}
+            ${status === 'pending_approval' || status === 'pending approval' ? 'bg-yellow-100 text-yellow-700' : ''}
             ${status === 'sent' ? 'bg-blue-100 text-blue-700' : ''}
             ${status === 'accepted' || status === 'approved' ? 'bg-green-100 text-green-700' : ''}
             ${status === 'declined' ? 'bg-red-100 text-red-700' : ''}
             ${status === 'expired' ? 'bg-orange-100 text-orange-700' : ''}
             ${status === 'invoiced' ? 'bg-purple-100 text-purple-700' : ''}
           `}>
-            {quote.status || "Unknown"}
+            {quote.status?.replace('_', ' ') || "Unknown"}
           </span>
         </div>
 
@@ -132,7 +134,29 @@ export default function QuotationActionBar({ quote }) {
             </button>
           )}
 
-          {!isSent && !isAccepted && !isConverted && canEdit && (
+          {isDraft && canEdit && (
+            <button
+              onClick={() => handleAction("submit-approval", "submit-approval")}
+              disabled={loadingAction === "submit-approval"}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 transition-colors"
+            >
+              {loadingAction === "submit-approval" && <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />}
+              Submit for Approval
+            </button>
+          )}
+
+          {isPendingApproval && canApprove && (
+            <button
+              onClick={() => handleAction("approve", "approve")}
+              disabled={loadingAction === "approve"}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors"
+            >
+              {loadingAction === "approve" && <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />}
+              Approve
+            </button>
+          )}
+
+          {!isSent && !isAccepted && !isConverted  && !isPendingApproval && canEdit && (
             <button
               onClick={() => handleAction("mark-sent", "mark-sent")}
               disabled={loadingAction === "mark-sent"}
