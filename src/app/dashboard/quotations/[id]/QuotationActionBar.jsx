@@ -26,7 +26,8 @@ export default function QuotationActionBar({ quote }) {
   const isDraft = status === "draft";
   const isPendingApproval = status === "pending approval" || status === "pending_approval";
   const isSent = status === "sent";
-  const isAccepted = status === "accepted" || status === "approved";
+  const isAccepted = status === "accepted";
+  const isApproved = status === "approved";
   const isDeclined = status === "declined";
   const isConverted = status === "invoiced" || status === "converted"; // Check exact zoho status for SO converted
 
@@ -156,7 +157,7 @@ export default function QuotationActionBar({ quote }) {
             </button>
           )}
 
-          {!isSent && !isAccepted && !isConverted  && !isPendingApproval && canEdit && (
+          {!isSent && !isAccepted && !isConverted  && !isPendingApproval && isApproved && canEdit && (
             <button
               onClick={() => handleAction("mark-sent", "mark-sent")}
               disabled={loadingAction === "mark-sent"}
@@ -167,7 +168,7 @@ export default function QuotationActionBar({ quote }) {
             </button>
           )}
 
-          {!isAccepted && !isConverted && canApprove && (
+          {!isAccepted && !isConverted && canApprove && isApproved && (
             <button
               onClick={() => handleAction("mark-accepted", "mark-accepted")}
               disabled={loadingAction === "mark-accepted"}
